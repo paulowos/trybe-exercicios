@@ -21,7 +21,16 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [x] Dia 1: [_HTML e CSS - Estruturas de página_](1-fundamentos/secao2-introducao-a-HTML-e-CSS/dia-01-html-e-css-estruturas-de-pagina)
 - [x] Dia 2: [_HTML e CSS - Primeiros passos em CSS_](1-fundamentos/secao2-introducao-a-HTML-e-CSS/dia-02-html-e-css-primeiros-passos-em-css)
-- [ ] Dia 3: [_HTML e CSS - Seletores e posicionamento_](1-fundamentos/secao2-introducao-a-HTML-e-CSS/dia-03-html-e-css-seletores-e-posicionamento)
-- [ ] Dia 4: [_HTML Semântico_](1-fundamentos/secao2-introducao-a-HTML-e-CSS/dia-04-html-semantico)
+- [x] Dia 3: [_HTML e CSS - Seletores e posicionamento_](1-fundamentos/secao2-introducao-a-HTML-e-CSS/dia-03-html-e-css-seletores-e-posicionamento)
+- [x] Dia 4: [_HTML Semântico_](1-fundamentos/secao2-introducao-a-HTML-e-CSS/dia-04-html-semantico)
+
+### Seção 3: [Introdução à JavaScript](1-fundamentos/secao3-introducao-a-JavaScript)
+
+- [x] Dia 1: [_JavaScript - Primeiros passos_](1-fundamentos/secao3-introducao-a-JavaScript/dia-01-javascript-primeiros-passos)
+- [ ] Dia 2: [_JavaScript - Array e loop For_](1-fundamentos/secao3-introducao-a-JavaScript/dia-02-javascript-array-e-loop-for)
+- [ ] Dia 3: [_JavaScript - Lógica de Programação e Algoritmos_](1-fundamentos/secao3-introducao-a-JavaScript/dia-03-javascript-logica-de-programação-e-algoritmos)
+- [ ] Dia 4: [_JavaScript - Objetos e funções_](1-fundamentos/secao3-introducao-a-JavaScript/dia-04-javascript-objetos-e-funções)
+- [ ] Dia 5: [_JavaScript ES6 - let, const, arrow functions e template literals_](1-fundamentos/secao3-introducao-a-JavaScript/dia-05-javascript-es6-let-const-arrow-functions-e-template-literals)
+
 
 [...]
