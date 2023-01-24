@@ -24,6 +24,8 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] Dia 3: [_HTML e CSS - Seletores e posicionamento_](1-fundamentos/secao2-introducao-a-HTML-e-CSS/dia-03-html-e-css-seletores-e-posicionamento)
 - [x] Dia 4: [_HTML Semântico_](1-fundamentos/secao2-introducao-a-HTML-e-CSS/dia-04-html-semantico)
 
+##
+
 ### Seção 3: [Introdução à JavaScript](1-fundamentos/secao3-introducao-a-JavaScript)
 
 - [x] Dia 1: [_JavaScript - Primeiros passos_](1-fundamentos/secao3-introducao-a-JavaScript/dia-01-javascript-primeiros-passos)
