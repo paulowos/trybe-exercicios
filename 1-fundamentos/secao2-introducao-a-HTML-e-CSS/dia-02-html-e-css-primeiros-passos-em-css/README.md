@@ -42,7 +42,7 @@ Colocar todos os elementos da tag `<style>` em um arquivo externo e linkar usand
 
 ## **Exercício I - Estilizando seu Portfólio Web**
 
-EStilizar o portfolio segundo o enunciado, usando:
+Estilizar o portfolio segundo o enunciado, usando:
 
 - `font-family`
 - `background-color`
