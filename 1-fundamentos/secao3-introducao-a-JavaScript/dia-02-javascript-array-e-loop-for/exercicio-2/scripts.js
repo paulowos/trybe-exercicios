@@ -4,9 +4,7 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 let crescent = [];
 
 for (let index = 0; index < numbers.length; index += 1) {
-    // console.log("index: " + numbers[index]);
     for (let index2 = index + 1; index2 < numbers.length; index2 += 1) {
-        // console.log("Index2: " + numbers[index2]);
         if (numbers[index] > numbers[index2]) {
             let position = numbers[index];
             numbers[index] = numbers[index2];
@@ -22,9 +20,7 @@ console.log(crescent);
 let decrescent = [];
 
 for (let index = 0; index < numbers.length; index += 1) {
-    // console.log("index: " + numbers[index]);
     for (let index2 = index + 1; index2 < numbers.length; index2 += 1) {
-        // console.log("Index2: " + numbers[index2]);
         if (numbers[index] < numbers[index2]) {
             let position = numbers[index];
             numbers[index] = numbers[index2];
