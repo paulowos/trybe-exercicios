@@ -5,9 +5,9 @@ const substituaX = (nome) => {
     return fraseSplit.join(" ");
 };
 
-const minhasSkills = (substituaX) => {
+const minhasSkills = (retornoSubstituaX) => {
     const skills = ["JS", "HTML", "CSS"];
-    let message = `${substituaX}
+    let message = `${retornoSubstituaX}
 Minhas três principais habilidades são:`;
 
     for (let skill in skills) {
