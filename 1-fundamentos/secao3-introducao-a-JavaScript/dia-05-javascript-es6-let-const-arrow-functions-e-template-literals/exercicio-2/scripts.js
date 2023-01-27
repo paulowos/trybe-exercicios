@@ -7,7 +7,8 @@ const substituaX = (nome) => {
 
 const minhasSkills = (substituaX) => {
     const skills = ["JS", "HTML", "CSS"];
-    let message = `${substituaX}`;
+    let message = `${substituaX}
+Minhas três principais habilidades são:`;
 
     for (let skill in skills) {
         message += ` 
