@@ -68,3 +68,7 @@ input:focus {
 .tech {
   transform: translateY(-20px);
 }
+
+#my-spotrybefy{
+    transition: all 0.25s ease;
+}
