@@ -11,3 +11,16 @@ const changeBgColor = () => {
     }
 };
 changeBgColor();
+
+const changeFontColor = () => {
+    const fontColor = document.querySelectorAll('#fontColor button');
+    const main = document.getElementsByTagName('main')[0];
+    main.style.color = localStorage.getItem('colorFont');
+    for (let button of fontColor) {
+        button.addEventListener('click', (event) => {
+            localStorage.setItem('colorFont', event.target.innerText);
+            main.style.color = localStorage.getItem('colorFont');
+        });
+    }
+};
+changeFontColor();
