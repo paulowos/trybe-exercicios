@@ -1,4 +1,4 @@
-
+//Requisito 1
 const changeBgColor = () => {
     const backgroundColor = document.querySelectorAll('#backgroundColor button');
     const body = document.getElementsByTagName('body')[0];
@@ -12,6 +12,7 @@ const changeBgColor = () => {
 };
 changeBgColor();
 
+//Requisito 2
 const changeFontColor = () => {
     const fontColor = document.querySelectorAll('#fontColor button');
     const main = document.getElementsByTagName('main')[0];
@@ -24,3 +25,17 @@ const changeFontColor = () => {
     }
 };
 changeFontColor();
+
+//Requisito 3
+const changeFontSize = () => {
+    const fontSize = document.querySelectorAll('#fontSize button');
+    const main = document.getElementsByTagName('main')[0];
+    main.style.fontSize = localStorage.getItem('sizeFont');
+    for (let button of fontSize) {
+        button.addEventListener('click', (event) => {
+            localStorage.setItem('sizeFont', event.target.innerText);
+            main.style.fontSize = localStorage.getItem('sizeFont');
+        });
+    }
+};
+changeFontSize();
