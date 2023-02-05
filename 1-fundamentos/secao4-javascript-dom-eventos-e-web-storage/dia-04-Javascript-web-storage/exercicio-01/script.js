@@ -13,9 +13,9 @@ const changeBgColor = () => {
 changeBgColor();
 
 //Requisito 2
+const main = document.getElementsByTagName('main')[0];
 const changeFontColor = () => {
     const fontColor = document.querySelectorAll('#fontColor button');
-    const main = document.getElementsByTagName('main')[0];
     main.style.color = localStorage.getItem('colorFont');
     for (let button of fontColor) {
         button.addEventListener('click', (event) => {
@@ -29,7 +29,6 @@ changeFontColor();
 //Requisito 3
 const changeFontSize = () => {
     const fontSize = document.querySelectorAll('#fontSize button');
-    const main = document.getElementsByTagName('main')[0];
     main.style.fontSize = localStorage.getItem('sizeFont');
     for (let button of fontSize) {
         button.addEventListener('click', (event) => {
@@ -39,3 +38,30 @@ const changeFontSize = () => {
     }
 };
 changeFontSize();
+
+//Requisito 4
+const changeLineHeight = () => {
+    const lineHeight = document.querySelectorAll('#lineHeight button');
+    main.style.lineHeight = localStorage.getItem('heightLine');
+    for (let button of lineHeight) {
+        button.addEventListener('click', (event) => {
+            localStorage.setItem('heightLine', event.target.innerText);
+            main.style.lineHeight = localStorage.getItem('heightLine');
+        });
+    }
+};
+changeLineHeight();
+
+//Requisito 5
+const changeFontType = () => {
+    const fontType = document.querySelectorAll('#fontType button');
+    main.style.fontFamily = localStorage.getItem('typeFont');
+    for (let button of fontType) {
+        button.addEventListener('click', (event) => {
+            localStorage.setItem('typeFont', event.target.innerText);
+            main.style.fontFamily = localStorage.getItem('typeFont');
+        });
+    }
+};
+changeFontType();
+
