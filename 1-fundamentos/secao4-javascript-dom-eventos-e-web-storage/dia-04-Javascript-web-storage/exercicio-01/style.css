@@ -1,0 +1,20 @@
+menu{
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px green solid;
+    align-items: center;
+    padding: 10px;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    text-align: center;
+}
+
+article{
+    text-align: justify;
+}
