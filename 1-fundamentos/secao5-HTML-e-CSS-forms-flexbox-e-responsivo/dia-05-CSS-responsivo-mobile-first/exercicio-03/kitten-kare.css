@@ -89,3 +89,21 @@ body {
     }
 
 }
+
+@media (max-width: 600px) {
+    #aside {
+        display: none;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    #content {
+        width: 85%;
+    }
+}
