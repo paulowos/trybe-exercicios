@@ -15,7 +15,18 @@ const chapterDropdown = () => {
     chapter.addEventListener('click', () => {
         list.style.display = list.style.display === 'block' ? 'none' : 'block';
     });
-    return list;
 };
 
 chapterDropdown();
+
+const informationDropdown = () => {
+    const information = document.getElementById('information-dropdown');
+    const list = document.querySelector('.aside-two ul');
+
+    information.addEventListener('click', () => {
+        list.style.display = list.style.display === 'block' ? 'none' : 'block';
+    });
+    return list;
+};
+
+informationDropdown();
