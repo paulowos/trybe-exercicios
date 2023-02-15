@@ -1,9 +1,15 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css);
 
+:root {
+    --primary-color: #F7E4CC;
+    --secondary-color: #E1897D
+}
+
 html {
     box-sizing: border-box;
     display: flex;
     justify-content: center;
+
 
 }
 
@@ -16,9 +22,9 @@ html {
 header {
     display: flex;
     flex-direction: column;
-    padding: 2% 5% 2% 5%;
     text-align: center;
-    margin-top: 20px;
+    box-shadow: 0px 5px 10px lightgray;
+
 }
 
 header p {
@@ -38,26 +44,70 @@ header ul {
     align-items: center;
     justify-content: space-between;
     border-bottom: solid 1px lightgray;
-    margin-bottom: 20px;
+    padding: 20px 0px 20px 0px;
+    background-color: var(--primary-color);
 }
 
 #title-container p {
     margin: auto;
-    margin-bottom: 20px;
-}
 
+}
 
 #menu {
     padding: 10px;
+    cursor: pointer;
 }
 
 .aside-one h2 {
     display: inline-block;
 }
 
+#menu-items {
+    display: none;
+    background-color: var(--secondary-color);
+    padding: 10px;
+
+}
+
 main {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
+
+.aside-one {
+    margin: 10px 0px 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 5px 10px lightgray;
+}
+
+.aside-one h2 {
+    margin-right: 10px;
+}
+
+.aside-one ul {
+    display: none;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    width: 100%;
+    list-style: none;
+    border-radius: 0px 0px 5px 5px;
+
+}
+
+#chapters-dropdown {
+    width: 100%;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+#chapters-dropdown {
+    text-align: center;
+    padding: 10px;
+    /* margin-bottom: 10px; */
+}
+
 
 /* @media screen and (max-width:600px) {}
