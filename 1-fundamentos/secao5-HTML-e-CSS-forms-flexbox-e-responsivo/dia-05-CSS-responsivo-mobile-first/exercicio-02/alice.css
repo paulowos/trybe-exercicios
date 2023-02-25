@@ -136,3 +136,29 @@ footer {
     width: 50%;
   }
 }
+
+@media screen and (min-width: 992px) {
+  main {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+  }
+  #menu-container {
+    display: block;
+    order: 2;
+  }
+
+  .aside-one,
+  .aside-two {
+    width: 100%;
+  }
+
+  .main-content {
+    width: 70%;
+  }
+
+  .aside-one ul,
+  .aside-two ul {
+    display: block;
+  }
+} ;
