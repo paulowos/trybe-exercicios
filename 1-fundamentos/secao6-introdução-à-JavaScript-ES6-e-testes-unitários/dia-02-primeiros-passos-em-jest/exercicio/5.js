@@ -11,5 +11,3 @@ const hydrate = (string) => {
   return `${total} copos de água`;
 
 };
-
-module.exports = hydrate;
