@@ -75,3 +75,28 @@ const studentsThatWatchedMathLessons = (lessons) => {
 };
 
 console.log(studentsThatWatchedMathLessons(allLessons));
+
+const createReport = (lessons, teacher) => {
+    const report = {
+        professor: 'generic',
+        aulas: [],
+        estudantes: 0,
+    };
+
+    const keys = listKeys(lessons);
+
+    let total = 0;
+
+    for (let index in keys) {
+        const entry = lessons[keys[index]];
+        if (entry['professor'] === teacher) {
+            report.professor = teacher;
+            report.aulas.push(entry.materia);
+            total += entry.numeroEstudantes;
+        }
+    }
+    report.estudantes = total;
+    return report;
+};
+
+console.log(createReport(allLessons, 'Maria Clara'));
