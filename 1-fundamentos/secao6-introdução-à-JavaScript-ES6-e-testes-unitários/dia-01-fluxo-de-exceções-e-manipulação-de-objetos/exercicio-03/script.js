@@ -60,3 +60,18 @@ const verifyPair = (object, key, value) => {
 };
 
 console.log(verifyPair(lesson2, 'turno', 'noite'));
+
+// console.log(allLessons);
+
+const studentsThatWatchedMathLessons = (lessons) => {
+    const keys = listKeys(lessons);
+    let total = 0;
+    for (let index in keys) {
+        if (lessons[keys[index]]['materia'] === 'Matemática') {
+            total += lessons[keys[index]]['numeroEstudantes'];
+        }
+    }
+    return total;
+};
+
+console.log(studentsThatWatchedMathLessons(allLessons));
