@@ -2,20 +2,20 @@ const mage = {
   healthPoints: 130,
   intelligence: 45,
   mana: 125,
-  damage: undefined,
+  damage: 0,
 };
 
 const warrior = {
   healthPoints: 200,
   strength: 30,
   weaponDmg: 2,
-  damage: undefined,
+  damage: 0,
 };
 
 const dragon = {
   healthPoints: 350,
   strength: 50,
-  damage: undefined,
+  damage: 0,
 };
 
 const battleMembers = { mage, warrior, dragon };
@@ -36,7 +36,7 @@ const mageDmg = () => {
   const minDmg = mage.intelligence;
   const mageMana = mage.mana;
   const status = {
-    dmg: 'Não possui mana suficiente',
+    dmg: ' - Não possui mana suficiente',
     manaSpent: 0
   };
   if (mageMana > 15) {
@@ -46,3 +46,29 @@ const mageDmg = () => {
   }
   return status;
 };
+
+const gameActions = {
+  warriorTurn(callback) {
+    const hitPoint = callback();
+    dragon.healthPoints -= hitPoint;
+    warrior.damage += hitPoint;
+  },
+  mageTurn(callback) {
+    const hitPoint = callback();
+    if (typeof hitPoint.dmg === 'number') dragon.healthPoints -= hitPoint.dmg;
+    mage.mana -= hitPoint.manaSpent;
+    mage.damage += hitPoint.dmg;
+  },
+  dragonTurn(callback) {
+    const hitPoint = callback();
+    mage.healthPoints -= hitPoint;
+    warrior.healthPoints -= hitPoint;
+    dragon.damage += hitPoint;
+  },
+  turnStatus() { return battleMembers; }
+};
+
+gameActions.warriorTurn(warriorDmg);
+gameActions.mageTurn(mageDmg);
+gameActions.dragonTurn(dragonDmg);
+console.log(gameActions.turnStatus());
