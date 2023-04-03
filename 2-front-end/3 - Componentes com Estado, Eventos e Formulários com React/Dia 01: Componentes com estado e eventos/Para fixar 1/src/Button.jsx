@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 
 export default class Button extends Component {
+  constructor() {
+    super();
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const { log } = this.props;
+    console.log(log);
+  }
   render() {
-    const { children, log } = this.props;
-    const handleClick = () => {
-      console.log(log);
-    };
-    return <button onClick={handleClick}>{children}</button>;
+    const { children } = this.props;
+    return <button onClick={this.handleClick}>{children}</button>;
   }
 }
