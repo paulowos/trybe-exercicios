@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Input from './Input';
 
 class Form extends Component {
   state = {
@@ -6,6 +7,15 @@ class Form extends Component {
     password: '',
     yesOrNo: 'yes',
     check: false,
+    error: false,
+  };
+
+  handleError = () => {
+    const { name, password, yesOrNo, check } = this.state;
+
+    const cases = [!name.length, !password.length, !yesOrNo.length, !check];
+    const condition = cases.every((e) => e !== true);
+    this.setState({ error: condition });
   };
 
   handleChange = ({ target }) => {
@@ -18,32 +28,30 @@ class Form extends Component {
     } else {
       value = target.value;
     }
-    this.setState({ [name]: value });
+    this.setState({ [name]: value }, this.handleError);
   };
 
   render() {
-    const { name, password, yesOrNo, check, photo } = this.state;
+    const { name, password, yesOrNo, check, photo, error } = this.state;
     return (
       <form>
         <fieldset>
           <legend>Login</legend>
-          <label htmlFor="name">Nome:</label>
-          <input
-            type="text"
+          <Input
+            callback={this.handleChange}
             name="name"
-            id="name"
-            onChange={this.handleChange}
             value={name}
-          />
+            type="text">
+            Nome:
+          </Input>
           <br />
-          <label htmlFor="password">Senha:</label>
-          <input
-            type="password"
+          <Input
+            callback={this.handleChange}
             name="password"
-            id="password"
-            onChange={this.handleChange}
             value={password}
-          />
+            type="password">
+            Senha:
+          </Input>
         </fieldset>
         <br />
         <fieldset>
@@ -83,6 +91,11 @@ class Form extends Component {
           <br />
           <img src={photo} alt="photo" />
         </fieldset>
+        {error ? (
+          <span style={{ color: 'green' }}>Preenchido</span>
+        ) : (
+          <span style={{ color: 'red' }}>Preencha</span>
+        )}
       </form>
     );
   }
