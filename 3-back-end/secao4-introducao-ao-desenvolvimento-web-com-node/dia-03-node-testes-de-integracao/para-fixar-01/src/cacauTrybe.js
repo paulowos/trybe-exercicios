@@ -1,10 +1,11 @@
 const fs = require('fs').promises;
 const { join } = require('path');
 
+const path = '/data/cacauTrybeData.json';
+const file = join(__dirname, path);
 const readCacauTrybeFile = async () => {
-  const path = '/data/cacauTrybeData.json';
   try {
-    const contentFile = await fs.readFile(join(__dirname, path), 'utf-8');
+    const contentFile = await fs.readFile(file, 'utf-8');
     return JSON.parse(contentFile);
   } catch (error) {
     return null;
@@ -40,10 +41,24 @@ const getChocolatesByName = async (query) => {
     .filter(({ name }) => name.toLowerCase().includes(query.toLowerCase()));
 };
 
+const updateChocolateById = async (id, body) => {
+  const cacauTrybe = await readCacauTrybeFile();
+  const index = cacauTrybe.chocolates
+    .findIndex((chocolate) => chocolate.id === id);
+
+  if (index < 0) return null;
+
+  cacauTrybe.chocolates[index] = { ...cacauTrybe.chocolates[index], ...body };
+  await fs.writeFile(file, JSON.stringify(cacauTrybe));
+
+  return cacauTrybe.chocolates[index];
+};
+
 module.exports = {
   getAllChocolates,
   getChocolateById,
   getChocolatesByBrand,
   getTotal,
-  getChocolatesByName
+  getChocolatesByName,
+  updateChocolateById
 };

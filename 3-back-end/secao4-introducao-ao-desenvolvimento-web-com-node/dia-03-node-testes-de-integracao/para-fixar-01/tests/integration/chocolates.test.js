@@ -53,6 +53,8 @@ describe('Testando a API Cacau Trybe', function () {
   beforeEach(function () {
     sinon.stub(fs.promises, 'readFile')
       .resolves(mockFile);
+    sinon.stub(fs.promises, 'writeFile')
+      .resolves();
   });
 
   afterEach(function () {
@@ -136,6 +138,32 @@ describe('Testando a API Cacau Trybe', function () {
       expect(response.status).to.be.equal(200);
       expect(response.body).to.be.instanceOf(Array);
       expect(response.body).to.deep.equal(output);
+    });
+  });
+
+  describe('Usando o método PUT em /chocolates/1', function () {
+    it('Retorna um objeto do chocolate atualizado', async function () {
+      const id = 1;
+      const requestBody = { name: 'Mint Pretty Good', brandId: 2 };
+      const response = await chai.request(app)
+        .put(`/chocolates/${id}`)
+        .send(requestBody);
+
+      expect(response.status).to.be.equal(200);
+      expect(response.body).to.deep.equal({ chocolate: { id, ...requestBody } });
+    });
+  });
+
+  describe('Usando o método PUT em /chocolates/555', function () {
+    it('Retorna um erro de id não encontrada', async function () {
+      const id = 555;
+      const requestBody = { name: 'Mint Pretty Good', brandId: 2 };
+      const response = await chai.request(app)
+        .put(`/chocolates/${id}`)
+        .send(requestBody);
+
+      expect(response.status).to.be.equal(404);
+      expect(response.body).to.deep.equal({ message: 'chocolate not found' });
     });
   });
 });
