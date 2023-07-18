@@ -9,9 +9,11 @@ const descriptionValidation = require('../middlewares/descriptionValidation');
 const createdAtValidation = require('../middlewares/description-fields-validations/createdAtValidation');
 const ratingValidation = require('../middlewares/description-fields-validations/ratingValidation');
 const difficultyValidation = require('../middlewares/description-fields-validations/difficultyValidation');
+const credentialValidation = require('../middlewares/credentialValidation');
 
 const router = express.Router();
 
+router.use(credentialValidation);
 router.use(nameValidation);
 router.use(priceValidation);
 router.use(descriptionValidation);

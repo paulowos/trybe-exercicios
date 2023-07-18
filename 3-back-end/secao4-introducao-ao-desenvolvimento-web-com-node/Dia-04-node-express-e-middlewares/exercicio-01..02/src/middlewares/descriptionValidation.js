@@ -5,13 +5,19 @@ const descriptionValidation = (req, res, next) => {
 
   const { description } = req.body;
 
+  let field = undefined;
+
   const properties = ['rating', 'difficulty', 'createdAt'];
 
   properties.forEach((prop) => {
-    if (!(prop in description)) return res
-      .status(400)
-      .json({ message: `O campo ${prop} é obrigatório` });
+    if (!(prop in description)) {
+      field = prop;
+    }
   });
+
+  if (field) return res
+    .status(400)
+    .json({ message: `O campo ${field} é obrigatório` });
 
   next();
 };
