@@ -1,8 +1,14 @@
 const { bookService } = require('../services');
 
-const getAll = async (_req, res) => {
+const getAll = async (req, res) => {
   try {
-    const books = await bookService.getAll();
+    let books;
+    const { author } = req.query;
+    if (!author) {
+      books = await bookService.getAll();
+    } else {
+      books = await bookService.getByAuthor(author);
+    }
     res.status(200).json(books);
   } catch (e) {
     console.log(e.message);
@@ -49,7 +55,6 @@ const remove = async (req, res) => {
   try {
     const { id } = req.params;
     const book = await bookService.remove(id);
-    console.log(book);
     if (!book) return res.status(404).json({ message: 'Book not found' });
     return res.status(204).end();
 
