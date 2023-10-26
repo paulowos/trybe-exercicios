@@ -1,5 +1,5 @@
 class Eletrodomestico:
-    def __init__(self, cor, potencia, tensao, preco):
+    def __init__(self, cor: str, potencia, tensao, preco):
         self.preco = preco
         self.cor = cor
         self._potencia = potencia
